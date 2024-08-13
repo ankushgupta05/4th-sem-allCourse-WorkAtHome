@@ -1,0 +1,27 @@
+SELECT department_id, department_name, location_id, city
+FROM departments NATURAL JOIN locations
+WHERE department_id IN (20, 50)
+
+
+
+SELECT l.city, d.department_name
+FROM locations l JOIN departments d using (location_id)
+WHERE location_id = 1400
+
+
+
+
+SELECT l.city, d.department_name
+FROM locations l JOIN departments d using (location_id)
+
+
+
+
+
+SELECT employees.employee_id, employees.last_name,
+ departments.department_id, departments.location_id
+
+FROM employees JOIN departments
+ON employees.department_id = departments.department_id;
+
+

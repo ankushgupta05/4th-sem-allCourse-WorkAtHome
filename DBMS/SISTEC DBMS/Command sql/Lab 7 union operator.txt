@@ -1,0 +1,133 @@
+SELECT *
+FROM job_history
+
+
+
+
+
+// find out employee work in compony
+SELECT employee_id, job_id
+FROM employees
+UNION
+SELECT employee_id, job_id
+FROM job_history
+
+
+
+
+SELECT  employee_id, job_id
+FROM employees
+INTERSECT
+SELECT employee_id, job_id
+FROM job_history
+
+
+
+
+
+SELECT  employee_id, job_id, department_id
+FROM employees
+INTERSECT
+SELECT employee_id, job_id, department_id
+FROM job_history
+
+
+
+
+SELECT  employee_id, department_id
+FROM employees
+WHERE (employee_id, department_id)
+       IN (SELECT employee_id,department_id
+       FROM employees
+       UNION
+       SELECT employee_id, department_id
+       FROM job_history
+)
+
+
+
+
+
+
+SELECT  last_name, salary, department_id
+FROM employees
+
+WHERE (salary, department_id )
+IN (
+SELECT  MIN(salary), department_id
+FROM employees
+GROUP BY department_id
+)
+ORDER BY department_id
+
+
+
+
+
+
+
+
+SELECT  employee_id
+FROM employees
+MINUS
+SELECT employee_id
+FROM job_history
+
+
+
+
+
+
+
+SELECT  employee_id ,department_id
+FROM employees
+
+WHERE (employee_id, department_id )
+IN (
+SELECT  employee_id, department_id
+FROM employees
+UNION
+SELECT  employee_id, department_id
+FROM job_history
+
+)
+
+
+
+
+
+
+
+SELECT  employee_id, TO_NUMBER(null) location, hire_date
+FROM employees
+UNION
+SELECT  department_id, location_id , TO_DATE(null)
+FROM departments
+
+
+
+
+
+SELECT  employee_id, job_id, salary
+FROM employees
+UNION
+SELECT  employee_id, job_id, TO_NUMBER(null) salary
+FROM job_history
+
+
+
+// value give accourding ourself
+SELECT 'sing' AS "MY dream", 3 a_dummy
+FROM dual
+UNION
+SELECT 'I''d like to teach',1 a_dummy
+FROM dual
+UNION
+SELECT 'the world to',1 a_dummy
+FROM dual
+ORDER BY a_dummy
+
+
+
+
+

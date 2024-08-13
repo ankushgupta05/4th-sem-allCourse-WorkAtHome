@@ -1,0 +1,41 @@
+IAM Services  
+================
+
+1. Login to AWS
+2. Click on Service -> security, identity-> IAm
+3. User -> create user  , custom -> password
+
+
+======================
+account id = 637423359888
+user ankush
+password = 
+
+
+
+=====
+
+
+
+Public IP :- 13.40.124.16
+
+password/key :-
+
+
+
+
+
+
+
+
+
+
+
+data base create :-
+=======
+mysql_secure_installtion
+mysql -u root -p
+show database
+create database
+
+create user 'ankush''@'
